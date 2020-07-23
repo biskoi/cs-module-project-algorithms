@@ -4,13 +4,20 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
+    result = []
 
-    pass
+    for i in range(len(nums) - k + 1):
+        curr_window = nums[i:i+k].copy()
+        curr_window.sort()
+        result.append(curr_window[-1])
+
+    return result
 
 
 if __name__ == '__main__':
     # Use the main function here to test out your implementation 
     arr = [1, 3, -1, -3, 5, 3, 6, 7]
     k = 3
+    # should be [3, 3, 5, 5, 6, 7]
 
     print(f"Output of sliding_window_max function is: {sliding_window_max(arr, k)}")
