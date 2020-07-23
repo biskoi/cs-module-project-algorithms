@@ -4,8 +4,16 @@ Returns: a List of integers
 '''
 def moving_zeroes(arr):
     # Your code here
+    result = []
 
-    pass
+    for i in arr:
+        if i == 0:
+            result.insert(0, i)
+        else:
+            result.append(i)
+
+    return result
+    
 
 
 if __name__ == '__main__':
@@ -13,3 +21,4 @@ if __name__ == '__main__':
     arr = [0, 3, 1, 0, -2]
 
     print(f"The resulting of moving_zeroes is: {moving_zeroes(arr)}")
+    print(moving_zeroes([1, 4, 6, 0, 4, 0, 3, 5]))
